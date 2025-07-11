@@ -8,7 +8,7 @@ const Navbar = () => {
 
   // Section IDs for navigation
   const sections = [
-    { id: 'home', name: 'Home' },
+    { id: 'hero', name: 'Home' },
     { id: 'services', name: 'Services' },
     { id: 'projects', name: 'Projects' },
     { id: 'about', name: 'About' },

@@ -1,13 +1,50 @@
 [
   {
-    "title": "Social Media Marketing",
-    "description": "We build communities, spark conversations, and create real impact through data-driven strategies.",
-    "icon": "📱"
+    "title": "Brand Strategy",
+    "description": "Crafting unique market positioning and compelling value propositions that differentiate your brand.",
+    "image": "src/assets/services/1.jpg",
+    "icon": "✨",
+    "features": [
+      "Lean market research",
+      "Brand personality development",
+      "Competitive analysis",
+      "Messaging frameworks"
+    ]
   },
   {
-    "title": "Video Production",
-    "description": "Cinematic, compelling videos that turn viewers into loyal fans.",
-    "icon": "🎥"
+    "title": "Digital Design",
+    "description": "Visually stunning designs that communicate your brand essence across all digital touchpoints.",
+    "image": "src/assets/services/2.jpg",
+    "icon": "🎨",
+    "features": [
+      "UI/UX design",
+      "Social media graphics",
+      "Motion design",
+      "Brand identity systems"
+    ]
+  },
+  {
+    "title": "Web Development",
+    "description": "High-performance websites that blend aesthetic appeal with seamless functionality.",
+    "image": "src/assets/services/3.jpg",
+    "icon": "💻",
+    "features": [
+      "React/Next.js development",
+      "E-commerce solutions",
+      "Web animations",
+      "SEO optimization"
+    ]
+  },
+  {
+    "title": "Content Production",
+    "description": "Cinematic storytelling through video and photography that captivates your audience.",
+    "image": "src/assets/services/4.jpg",
+    "icon": "🎥",
+    "features": [
+      "Product shoots",
+      "Explainer videos",
+      "Drone cinematography",
+      "Editing & post-production"
+    ]
   }
-
 ]
