@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './pages/hero'
 import Services from './pages/Services'
 import About from './pages/About'
+import Testimonial from './pages/Testimonial'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Hero />
       <Services />
       <About />
+      <Testimonial />
     </div>
  
     </>
