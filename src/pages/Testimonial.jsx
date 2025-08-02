@@ -3,30 +3,33 @@ import Carousel from '../components/Carousel';
 import testimonials from '../data/testimonials.json';
 
 const TestimonialPage = () => {
-  // Prepare carousel items without icons
   const carouselItems = testimonials.map(item => ({
     ...item,
-    icon: <span className="h-[16px] w-[16px] text-white">★</span> // Using simple star character
+    icon: <span className="h-4 w-4 text-white">★</span>,
   }));
 
   return (
-    <div className="bg-black text-white py-20 min-h-screen">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4">Client Testimonials</h2>
-        <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+    <div id="testimonials" className="bg-black text-white min-h-screen flex items-center justify-center px-4 py-16">
+      <div className="w-full max-w-5xl">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4">
+          Client Testimonials
+        </h2>
+        <p className="text-gray-300 text-center mb-10 text-base md:text-lg">
           What our clients say about us
         </p>
 
-        <div style={{ height: '600px', position: 'relative' }}>
-          <Carousel
-            items={carouselItems}
-            baseWidth={300}
-            autoplay={true}
-            autoplayDelay={3000}
-            pauseOnHover={true}
-            loop={true}
-            round={false}
-          />
+        <div className="w-full flex justify-center">
+          <div className="w-full sm:max-w-md md:max-w-2xl">
+            <Carousel
+              items={carouselItems}
+              baseWidth={300}
+              autoplay={true}
+              autoplayDelay={3000}
+              pauseOnHover={true}
+              loop={true}
+              round={false}
+            />
+          </div>
         </div>
       </div>
     </div>

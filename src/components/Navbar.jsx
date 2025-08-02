@@ -114,7 +114,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <motion.div
-        className={`md:hidden bg-gray-900 shadow-lg overflow-hidden ${
+        className={`md:hidden bg-black shadow-lg overflow-hidden ${
           isOpen ? 'block' : 'hidden'
         }`}
         initial={false}
