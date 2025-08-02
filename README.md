@@ -114,11 +114,11 @@ Kryptmediawebsite/
 
 ### `services.json`
 - Array of service objects: `title`, `description`, `image`, `icon`, `features[]`
-- Images referenced from `src/assets/services/`
+- Images referenced from `public/assets/services/`
 
 ### `team.json`
 - Array of team members: `name`, `role`, `phone`, `image`
-- Images referenced from `src/assets/team/`
+- Images referenced from `public/assets/team/`
 
 ### `projects.json`
 - Array of projects: `title`, `description`, `image`, `link`
@@ -127,11 +127,11 @@ Kryptmediawebsite/
 ---
 
 ## 🛠️ Customization
-- **Add new services:** Edit `src/data/services.json` and add images to `src/assets/services/`
-- **Add team members:** Edit `src/data/team.json` and add images to `src/assets/team/`
+- **Add new services:** Edit `src/data/services.json` and add images to `public/assets/services/`
+- **Add team members:** Edit `src/data/team.json` and add images to `public/assets/team/`
 - **Add projects:** Edit `src/data/projects.json` and update the UI as needed
 - **Change styles:** Edit Tailwind classes in components or add global styles in `index.css`
-- **Update logo:** Replace `src/assets/logo.avif`
+- **Update logo:** Replace `public/logo.avif`
 
 ---
 

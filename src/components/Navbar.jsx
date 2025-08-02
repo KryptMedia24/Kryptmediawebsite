@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.avif';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +52,7 @@ const Navbar = () => {
             onClick={() => setActiveSection('home')}
           >
             <img
-              src={logo}
+              src="/logo.avif"
               alt="Krypt Media Logo"
               className="h-20 w-auto transition-transform duration-300"
             />

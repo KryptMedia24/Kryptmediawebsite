@@ -3,18 +3,18 @@
     "name": "Priyanshu Naik",
     "role": "Co-Founder",
     "phone": "9167012101",
-    "image": "src/assets/team/2.jpg"
+    "image": "/assets/team/2.jpg"
   },
   {
     "name": "Taniksh Waingankar",
     "role": "Co-Founder",
     "phone": "8169765858",
-    "image": "src/assets/team/3.jpg"
+    "image": "/assets/team/3.jpg"
   },
   {
     "name": "Kartik Mistry",
     "role": "Co-Founder",
     "phone": "9930183457",
-    "image": "src/assets/team/1.jpg"
+    "image": "/assets/team/1.jpg"
   }
 ]
