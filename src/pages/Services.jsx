@@ -1,12 +1,40 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 import services from "../data/services.json";
+import WebsiteDesign from "./ServiceInfo/WebsiteDesign";
+import SocialMediaMarketing from "./ServiceInfo/SocialMediaMarketing";
+import VideoProduction from "./ServiceInfo/VideoProduction";
+import DesignServices from "./ServiceInfo/DesignServices";
+import ContentWriting from "./ServiceInfo/ContentWriting";
+import BrandStrategy from "./ServiceInfo/BrandStrategy";
 
 const Services = () => {
+  const [currentService, setCurrentService] = useState(null);
+  const [servicesScrollPosition, setServicesScrollPosition] = useState(0);
   const [sectionRef, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const handleServiceClick = (serviceTitle) => {
+    // Store current scroll position before opening service
+    setServicesScrollPosition(window.scrollY);
+    setCurrentService(serviceTitle);
+    // Scroll to the services section
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleBackToServices = () => {
+    setCurrentService(null);
+    // Scroll back to the stored position of the services section
+    setTimeout(() => {
+      window.scrollTo({ top: servicesScrollPosition, behavior: 'smooth' });
+    }, 100); // Small delay to ensure the services section is rendered
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -36,6 +64,37 @@ const Services = () => {
       transition: { duration: 0.3 }
     }
   };
+
+  // Render individual service page if one is selected
+  if (currentService) {
+    const serviceComponents = {
+      "Website Design & Development": WebsiteDesign,
+      "Social Media Marketing": SocialMediaMarketing,
+      "Video Production": VideoProduction,
+      "Design Services": DesignServices,
+      "Content Writing": ContentWriting,
+      "Brand Strategy": BrandStrategy
+    };
+
+    const ServiceComponent = serviceComponents[currentService];
+    
+    return (
+      <div className="min-h-screen bg-black">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <button
+            onClick={handleBackToServices}
+            className="mb-8 inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Services
+          </button>
+        </div>
+        <ServiceComponent />
+      </div>
+    );
+  }
 
   return (
     <section 
@@ -67,7 +126,7 @@ const Services = () => {
 
         {/* Services grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="flex flex-wrap justify-center gap-8"
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
@@ -75,7 +134,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={`${service.title}-${index}`}
-              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="w-full md:w-1/2 lg:w-1/4 bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               variants={cardVariants}
               whileHover="hover"
             >
@@ -99,14 +158,27 @@ const Services = () => {
                 <h3 className="text-xl font-bold mb-2 text-white">{service.title}</h3>
                 <p className="text-gray-200 mb-4">{service.description}</p>
                 
-                <ul className="space-y-2">
-                  {service.features.map((feature, i) => (
+                <ul className="space-y-2 mb-6">
+                  {service.features.slice(0, 4).map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <span className="text-green-500 mr-2">•</span>
                       <span className="text-gray-200">{feature}</span>
                     </li>
                   ))}
+                  {service.features.length > 4 && (
+                    <li className="text-gray-400 text-sm">
+                      +{service.features.length - 4} more features
+                    </li>
+                  )}
                 </ul>
+                
+                {/* See More Button */}
+                <button
+                  onClick={() => handleServiceClick(service.title)}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                >
+                  See More
+                </button>
               </div>
             </motion.div>
           ))}
