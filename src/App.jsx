@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import Hero from './pages/hero'
 import Services from './pages/Services'
 import About from './pages/About'
@@ -20,6 +21,7 @@ function App() {
       <About />
       <Testimonial />
       <Contact />
+      <Footer />
     </div>
  
     </>

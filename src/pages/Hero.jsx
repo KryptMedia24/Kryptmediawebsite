@@ -65,7 +65,7 @@ export default function Hero() {
         >
           Beyond Trends.<br />
           <motion.span
-            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-100 to-yellow-400"
             variants={item}
           >
             Branding That Transcends.
@@ -82,7 +82,7 @@ export default function Hero() {
         <motion.div variants={item}>
           <button 
             onClick={scrollToServices}
-            className="mt-8 px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-medium hover:shadow-lg transition-all"
+            className="mt-8 px-8 py-3 bg-gradient-to-r from-yellow-100 to-yellow-400 rounded-full text-black font-medium hover:shadow-lg transition-all"
           >
             Get Started
           </button>

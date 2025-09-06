@@ -7,7 +7,7 @@ const ContactPage = () => {
         <div className="w-full max-w-[570px]">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold text-white">GET IN TOUCH WITH US</h2>
+            <h2 className="text-5xl font-bold text-white">Get in touch with us!</h2>
           </div>
 
           {/* WhatsApp Button */}
@@ -58,7 +58,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <h4 className="mb-1 text-xl font-bold text-white">Email Address</h4>
-                <p className="text-base text-dark-6">info@yourdomain.com</p>
+                <p className="text-base text-dark-6">info@kryptmedia.in</p>
               </div>
             </div>
           </div>

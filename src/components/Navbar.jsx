@@ -46,10 +46,14 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <motion.a 
-            href="#home" 
+            href="#hero" 
             className="flex-shrink-0"
             whileHover={{ scale: 1.05 }}
-            onClick={() => setActiveSection('home')}
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setActiveSection('hero');
+            }}
           >
             <img
               src="/logo.avif"
@@ -66,8 +70,8 @@ const Navbar = () => {
                 href={`#${section.id}`}
                 className={`text-lg font-semibold transition-all duration-300 ${
                   activeSection === section.id 
-                    ? 'text-blue-500 scale-110' 
-                    : 'text-white hover:text-blue-400 hover:scale-105'
+                    ? 'text-yellow-400 scale-110' 
+                    : 'text-white hover:text-yellow-100 hover:scale-105'
                 }`}
                 onClick={() => {
                   setActiveSection(section.id);

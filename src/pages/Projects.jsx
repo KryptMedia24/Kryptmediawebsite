@@ -396,15 +396,15 @@ const Projects = () => {
 
   // Show projects carousel
   return (
-    <div id="projects" className="w-full flex flex-col items-center justify-center py-12 bg-black relative">
-      {/* Overlay Title */}
-      <div className="absolute top-8 text-center z-10">
+    <div id="projects" className="w-full flex flex-col items-center justify-center py-12 bg-black relative scroll-mt-20">
+      {/* Move the title to be naturally positioned at the top */}
+      <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-white">Projects</h2>
         <p className="text-lg text-gray-200 mt-2">A glimpse into some of our recent work</p>
       </div>
 
       {/* Slider */}
-      <div className="max-w-4xl w-full mt-24">
+      <div className="max-w-4xl w-full">
         <div ref={sliderRef} className="keen-slider zoom-out">
           {projects.map((project, idx) => (
             <div key={project.id} className="keen-slider__slide zoom-out__slide flex justify-center">
